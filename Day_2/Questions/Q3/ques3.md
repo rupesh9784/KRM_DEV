@@ -1,6 +1,6 @@
 
 ## Instructions
-Create an HTML file named `.html` that includes the following elements:
+Create an HTML file named `personal_blog.html` that includes the following elements:
 
 
 ##### Tasks
