@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+</head>
+<body>
+    <form style="border: 3px solid; padding: 20px; color: black;">
+        <h2>Registration form</h2>
+
+        <label for="name">Full Name: </label>
+        <input type="text" name="user-name" id="name" value="amitabh bachan" readonly>
+        <br><br>
+        
+        <label for="email">Email: </label>
+        <input type="email" name="user-email" id="email" required>
+        <br><br>
+
+        <label for="pass">password: </label>
+        <input type="password" name="password" id="pass" minlength="8" required>
+        <br><br>
+        
+        <label for="age">Age: </label>
+        <input type="number" name="Age" id="age" min="18" max="60" required>
+        <br><br>
+
+        <label for="dob">DOB: </label>
+        <input type="date" name="date-of-birth" id="dob" required>
+        <br><br>
+
+        <label>Gender: </label>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="FeMale"> FeMale
+        <input type="radio" name="gender" value="other"> other
+        <br><br>
+
+        <label for="city">choose a city</label>
+        <select name="city-name" id="city" required>
+            <option value="">--Select--</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chennai">Chennai</option>
+        </select>
+        <br><br>
+
+        <label for="">hobbies: </label>
+        <input type="checkbox" name="hobbies" value="Reading"> Reading
+        <input type="checkbox" name="hobbies" value="Music"> Music
+        <input type="checkbox" name="hobbies" value="Sports"> Sports
+        <br><br>
+
+        <input type="submit" value="Register">
+    </form>
+    
+</body>
+</html>

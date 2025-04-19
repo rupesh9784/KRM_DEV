@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit card Details</title>
+</head>
+<body>
+    <h1>Credit Card Payment</h1>
+
+    <form >
+
+        
+        <label for="cardholderName">Cardholder Name:</label>
+        <input type="text" id="cardholderName" name="cardholderName" placeholder="Enter full name" required >
+        <br><br>
+ 
+        <label for="cardNumber">Card Number:</label>
+        <input type="number" id="cardNumber" name="cardNumber" required pattern="\d{16}" maxlength="16" placeholder="16-digit card number">
+        <br><br>
+
+        <label for="expiryDate">Expiry Date (MM/YYYY):</label>
+        <input type="month" id="expiryDate" name="expiryDate" required>
+        <br><br>
+
+      
+        <label for="cvv">CVV:</label>
+        <input type="number" id="cvv" name="cvv" required pattern="\d{3}" maxlength="3" placeholder="3-digit CVV">
+        <br><br>
+
+        <label for="cardType">Card Type:</label>
+        <select id="cardType" name="cardType" required>
+            <option value="">Select Card Type</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+        </select><br><br>
+
+        
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the <a href="#">terms and conditions</a>.</label>
+        <br><br>
+
+        <button type="submit">Pay Now</button>
+
+    </form>
+</body>
+</html>
