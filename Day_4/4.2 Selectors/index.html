@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    /* universal selector */
+    * {
+        font-size: 20px;
+    }
+    /* element selector */
+      p {
+        color:#ff0000;
+      }
+    /* class selector */
+    .box1 {
+        color: rgb(143,46,93);
+        background-color: yellow;
+    }
+
+  #sect-2 {
+    color: green;
+  }
+
+  li[value] {
+    color: brown;
+  }
+
+  li[value="7"] {
+    background-color: green;
+  }
+
+   </style>
+   
+
+</head>
+<body>
+    <div class="box1">I am div element
+        <h2>i am head 1</h2>
+        <p>I am paragraph of div 1.1</p>
+        <p>I am paragraph of div 1.2</p>
+    </div>
+    
+    <div class="box2" id="sect-2">I am div element
+        <h2>I am head 2</h2>
+        <p>I am paragraph of div 2.1</p>
+        <p>I am paragraph of div 2.2</p>
+        <ol>
+            <li >i am list </li>
+            <li value="5">i am list </li>
+            <li value="7">i am list </li>
+            <li value="9">i am list </li>
+        </ol>
+    </div>
+
+    <div class="box3">I am div element
+        <p>I am paragraph of div 3.1</p>
+        <p>I am paragraph of div 3.2</p>
+        <ol>
+            <li >i am list </li>
+            <li value="5">i am list </li>
+            <li value="7">i am list </li>
+            <li value="9">i am list </li>
+        </ol>
+    </div>
+    <p>I am paragraph 1</p>
+    <p>I am paragraph 2</p>
+</body>
+</html>
