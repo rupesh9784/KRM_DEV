@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .box{
+     color: red;
+    }
+    .box *{
+        color: initial;
+    } */
+     /* multiple selector
+   .child2,.child3{
+    color: blue;
+   } */
+
+   /* immediate sibling of h2
+   h2+p{
+    color: red;
+   } */
+/*    
+   sibling agter h2 tag
+   h2~p {
+     color: blue;
+   } */
+
+/* direct child
+.par1>p{
+    color: blue;
+} */
+   
+
+/* desecendants use space
+.par1 p{
+    color: red;
+} */
+
+</style>
+<body>
+
+    
+ <div class="box box1"> I am box 1
+    <div class="par1"> I am par 1
+        <div class="child1">
+            <h2>I am head 1</h2>
+            <div class="child1div">I am insdide child1
+                <p>I am insde child1 div</p>
+            </div>
+            <p>I am paragraph 1</p>
+            <p>I am paragraph 2</p>
+        </div>
+        <h2>I am h2 direct</h2>
+        <p>I am paragraph 3</p>
+        <p>I am paragraph 4</p>
+        <div class="child2">
+            <p>I am paragraph 5</p>
+        </div>
+       
+    </div>
+ </div>
+
+
+
+</body>
+</html>
