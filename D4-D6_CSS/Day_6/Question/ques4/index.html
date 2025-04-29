@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox To-Do Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+    .box {
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+    .red { background-color: #ff4d4d; }
+    .blue { background-color: #4da6ff; }
+    .green { background-color: #66cc66; }
+    .orange { background-color: #ff9933; }
+    .purple { background-color: #cc66ff; }
+    .yellow { background-color: #ffeb3b; color: black; }
+    .pink { background-color: #ff66b2; }
+    .cyan { background-color: #00e6e6; }
+    .brown { background-color: #996633; }
+    .gray { background-color: #808080; color: white; }
+  </style>
+
+  <!-- ✅ To-Do Tasks -->
+  <!-- -------------------------------------- -->
+  <!-- 1. Make .container-1 a flex container -->
+  <!-- 2. Set flex-direction to row on .container-1 -->
+  <!-- 3. Center all items vertically and horizontally inside .container-1 -->
+
+  <!-- 4. Make .container-2 a flex container -->
+  <!-- 5. Set flex-direction to column on .container-2 -->
+  <!-- 6. Align items to flex-end inside .container-2 -->
+
+  <!-- 7. Make .container-3 a flex container with wrap enabled -->
+  <!-- 8. Justify content with space-around in .container-3 -->
+
+  <!-- 9. In .container-4, set align-items: baseline and observe text alignment -->
+
+  <!-- 10. Bonus: Use media query to change flex-direction of .container-1 to column when screen is less than 600px wide -->
+
+  <!-- 📢 Tips: You can add 'display: flex', 'justify-content', 'align-items', 'flex-wrap' and media query for interesting effects. -->
+  <!-- 📢 Focus mainly on FLEX properties and make the structure beautiful. -->
+  <!-- -------------------------------------- -->
+
+</head>
+
+<body>
+
+  <h1>Flexbox To-Do Practice 🎯</h1>
+
+  <h2>Container 1</h2>
+  <div class="container container-1">
+    <div class="box red">Box 1</div>
+    <div class="box blue">Box 2</div>
+    <div class="box green">Box 3</div>
+  </div>
+
+  <h2>Container 2</h2>
+  <div class="container container-2">
+    <div class="box orange">Box A</div>
+    <div class="box purple">Box B</div>
+    <div class="box yellow">Box C</div>
+  </div>
+
+  <h2>Container 3 (More Items)</h2>
+  <div class="container container-3">
+    <div class="box pink">One</div>
+    <div class="box cyan">Two</div>
+    <div class="box brown">Three</div>
+    <div class="box gray">Four</div>
+    <div class="box red">Five</div>
+    <div class="box blue">Six</div>
+  </div>
+
+  <h2>Container 4 (Baseline)</h2>
+  <div class="container container-4">
+    <div class="box green" style="font-size: 14px;">Small Text</div>
+    <div class="box orange" style="font-size: 24px;">Medium Text</div>
+    <div class="box purple" style="font-size: 36px;">Large Text</div>
+  </div>
+
+</body>
+</html>

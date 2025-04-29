@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+      }
+      .static {
+        position: static;
+        left: 50px;
+        top: 50px;
+      }
+
+      /* shift element from actual pos */
+      .relative {
+        z-index: -1;
+        background-color: blueviolet;
+        position: relative;
+        left: 50px;
+        top: 50px;
+      }
+      /* related to neares parent which has position property otherwise related to root element */
+      .absolute {
+        position: absolute;
+        background-color: blue;
+        /* left: 220px; */
+        top: 30px;
+        right: 200px;
+      }
+      .child {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        z-index: 2;
+      }
+      /* related to root element */
+      .fixed {
+        position: fixed;
+        background-color: chartreuse;
+        left: 100px;
+        top: 100px;
+      }
+      .sticky {
+        position: sticky;
+        top: 50px;
+        left: 230px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Position</h2>
+    <div class="box static">I am block1</div>
+    <div class="box relative">I am block2</div>
+    <div class="box absolute">I am block3</div>
+    <div class="box sticky">I am block6</div>
+    <div class="box" style="position: relative; z-index: -3">
+      I am block4
+
+      <div class="child absolute">I am child</div>
+    </div>
+    <div class="box fixed">I am block5</div>
+    <div class="box">I am block7</div>
+    <div class="box">I am block8</div>
+    <div class="box">I am block8</div>
+    <div class="box">I am block8</div>
+    <div class="box">I am block8</div>
+    <div class="box">I am block8</div>
+    <div class="box">I am block8</div>
+    <div class="box">I am block8</div>
+  </body>
+</html>

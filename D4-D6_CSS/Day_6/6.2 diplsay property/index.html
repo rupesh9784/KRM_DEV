@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block {
+        /* display: none; */
+        /* new line */
+        height: 100px;
+        width: 100px;
+        /* padding: 20px; */
+        /* margin work
+           margin-top: 20px;
+           /* margin-left: 20px; */
+      }
+
+      .b1 {
+        background-color: red;
+      }
+      .b2 {
+        background-color: blue;
+      }
+      .inline {
+        /* same line */
+        background-color: green;
+        /* not work
+            height: 100px;
+            width: 100px; */
+        /* padding-left: 30px;
+            padding-right: 20px;
+            padding-top: 25px;
+            padding-bottom: 20px; */
+        /* margin horiontal(left + right) work
+            margin-right: 20px;
+           margin-left: 20px; */
+
+        /* vertical margin not work
+           margin-top: 40px;
+           margin-bottom: 30px; */
+      }
+      .inline-block {
+        /* same line */
+        display: inline-block;
+        background-color: orange;
+        height: 100px;
+        width: 100px;
+        /* padding */
+        /* padding-left: 30px;
+            padding-right: 20px;
+            padding-top: 25px;
+            padding-bottom: 20px; */
+        /* margin work
+            margin-top: 20px;
+           margin-left: 20px; */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>inline , block and inline-block</h2>
+    <div class="block b1">I am div1</div>
+    <div class="block b2">I am div2</div>
+    <span class="inline i1">I am span1</span>
+    <span class="inline-block i2">I am span2</span>
+    <span class="inline i3">I am span1</span>
+  </body>
+</html>

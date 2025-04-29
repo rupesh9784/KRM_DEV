@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-container {
+        border: 5px solid red;
+        display: flex;
+        flex-direction: row;
+        height: 500px;
+        /* gap: 10px; */
+        /* flex-wrap: nowrap; deault */
+        /* flex-wrap: wrap; */
+
+        /* along main-axis */
+        /* justify-content: flex-start; */
+        /* justify-content: flex-end; */
+        /* justify-content: center; */
+        /* justify-content: space-around; */
+        /* justify-content: space-between; */
+        /* justify-content: space-evenly; */
+
+        /* if flex-wrap : nowrap then only works */
+        /* align-items along cross axis */
+        /* align-items: start;
+              align-items: end; */
+        /* align-items: center; */
+
+        /* if flex-wrap : wrap then only works */
+        /* align-content: center; */
+        /* align-content: start; */
+      }
+      /* .flex-item{ */
+      /* dir row change width */
+      /* dir column change height */
+      /* flex-basis: 50px;
+        } */
+      /* .item3{
+            initially all element has order 0
+            order: -2;
+        /* } */
+      .item2 {
+        order: -1;
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox Playground</h1>
+
+    <!-- Main Flex Parent -->
+    <div class="flex-container">
+      <!-- Child Items -->
+      <p class="flex-item" style="background-color: aqua">I am paragraph</p>
+      <div class="flex-item item1" style="background-color: lightcoral">
+        I am divblock
+      </div>
+      <div class="flex-item item2" style="background-color: lightblue">
+        Item 2
+      </div>
+      <div class="flex-item item3" style="background-color: lightgreen">
+        Item 3
+      </div>
+      <div class="flex-item item4" style="background-color: lightpink">
+        Item 4
+      </div>
+      <div class="flex-item item5" style="background-color: lightseagreen">
+        Item 5
+      </div>
+      <div class="flex-item item5" style="background-color: blue">Item 6</div>
+      <div class="flex-item item5" style="background-color: lightseagreen">
+        Item 7
+      </div>
+      <div class="flex-item item5" style="background-color: chartreuse">
+        Item 8
+      </div>
+      <div class="flex-item item5" style="background-color: lightseagreen">
+        Item 9
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            box-sizing: content-box;
+            background-color: lightblue;
+            height: 200px;
+            width: 200px;
+            border-left: 5px solid red;
+            border-top: 5px solid blue;
+            border-style: dashed;
+  
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 20px;
+            /* total width = content width(user define) + lp + rp + lb + rb */
+             /* total width  = 150 + 10 + 10 + 5 + 3 = 178 */
+             margin: 5px;
+
+        }
+        .border-box {
+            box-sizing: border-box;
+            /* total width(user define) = content width + lp + rp + lb + rb */
+             /* /* 150  = content width + 10 + 10 + 5 + 3  , contet width = 150 - 10 -10-5-3 = 122*/
+        }
+        /* .overf { */
+            /* overflow: visible; defaul */
+            /* overflow: hidden; hide content  */
+            /* overflow: scroll; */
+            /* overflow: auto; */
+        /* } */
+    </style>
+</head>
+<body>
+    <h2>Box Model</h2>
+
+   <div class="box content-box">I am box</div>
+   <div class="box border-box">I am box 2</div>
+   <p class="box overf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero dicta ratione voluptas ullam quis quibusdam, aliquam amet, dolor ut maxime eligendi aut distinctio dolores maiores, eveniet porro odio officia id dignissimos? Officiis obcaecati qui excepturi </p>
+</body>
+</html>
