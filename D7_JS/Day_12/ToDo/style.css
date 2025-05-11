@@ -1,0 +1,97 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-top: 20px;
+  }
+
+  .todo-container {
+    background-color: #fff;
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .todo-input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  #taskInput {
+    width: 70%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #addTaskBtn {
+    background-color: #28a745;
+    color: white;
+  }
+  h3 {
+    text-align: center;
+  }
+  #addTaskBtn:hover {
+    background-color: #218838;
+  }
+
+  .task-list li {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .task-text {
+    width: 70%;
+  }
+  
+  .task-btn {
+    margin-left: 8px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    color: white;
+    border: none;
+  }
+  
+  .edit-btn {
+    background-color: #007bff;
+  }
+  
+  .edit-btn:hover {
+    background-color: #0069d9;
+  }
+ 
+  .delete-btn {
+    background-color: #dc3545;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+ 

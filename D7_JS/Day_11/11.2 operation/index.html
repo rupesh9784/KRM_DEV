@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Playground</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+    .blue-text {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="mainHeading">DOM Practice Page</h1>
+
+  <div id="container1" class="box">
+    <h2 class="section-title">Section 1</h2>
+    <p class="text">This is paragraph 1 in section 1.</p>
+    <p class="text">This is paragraph 2 in section 1.</p>
+    <button id="btn1" class="action-btn">Click Me 1</button>
+  </div>
+
+  <div id="container2" class="box special">
+    <h2 class="section-title">Section 2</h2>
+    <p class="text blue-text">This is a paragraph in section 2.</p>
+    <button id="btn2" class="action-btn special-btn">Click Me 2</button>
+  </div>
+
+  <div id="listContainer" class="list-box">
+    <h2 class="section-title">To-Do List</h2>
+    <ul id="todoList" class="list">
+      <li class="task-item">Task 1</li>
+      <li class="task-item">Task 2</li>
+      <li class="task-item highlight">Task 3</li>
+    </ul>
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+   <script src="./scrpt.js"></script>
+</body>
+</html>
