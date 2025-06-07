@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+     }
+
+    body {
+        margin: 0px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .box {
+        height: 150px;
+        width: 150px;
+    
+    }
+
+    .one {
+        background-color: aqua;
+        /* transform :rotateZ(45deg); */
+    }
+
+    .two {
+        background-color: lightcoral;
+        
+    }
+    
+    .three {
+        background-color: lightgreen;
+        
+    }
+    
+    .one:hover{
+        transform: scaleX(200%);
+        transition-duration: 2s;
+    }
+    .two:hover{
+      
+        transform: scaleY(200%);
+        transition-duration: 3s;
+    }
+    .three:hover{
+        /* transform: scale(200%); */
+        transform: scale(20%);
+        transform: scale(.2);
+        transition-duration: 2.5s;
+    }
+
+
+
+
+</style>
+
+<body>
+    <div class="box one"></div>
+    <div class="box two"></div>
+    <div class="box three"></div>
+</body>
+
+</html>
