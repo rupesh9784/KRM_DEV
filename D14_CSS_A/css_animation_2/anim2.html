@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final_ani</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      .container {
+        height: 500px;
+        width: 500px;
+        background-color: slategray;
+         position: relative;
+        /* flex */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       /* animation property in single line */
+         animation: rotate_ct 4s linear infinite;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        background-color: hotpink;
+        border: 3px solid black;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /* border-radius: 50%; */
+        animation-name: journey-to-circle, anim2;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+
+        /* animation-delay: 3s; */
+        animation-direction: alternate;
+        /* alternat -> 0 - 100 , 100 -0 */
+        animation-fill-mode: forwards;
+      }
+
+      /* break till 10:12 */  
+      @keyframes rotate_ct {
+        50%{
+            opacity: 0.1;
+        }
+         100%{
+            transform: rotate(-360deg);
+         }
+
+      }
+       
+      @keyframes journey-to-circle {
+        /* 0 to 100% */
+        0% {
+          top: 0;
+          left: 0;
+          background-color: aqua;
+        }
+        33% {
+            top: 100%;
+            left: 0;
+            transform: translateY(-100%);
+            background-color: aqua;
+        }
+        
+        50% {
+          border-radius: 50%;
+        }
+        66% {
+            top: 100%;
+            left: 100%;
+            transform: translate(-100% , -100%);
+            background-color: red;
+        }
+
+        100% {
+            top: 0;
+            left: 100%;
+            transform: translateX(-100% );
+          background-color: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
+
+
