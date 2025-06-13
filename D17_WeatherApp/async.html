@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Async</h2>
+    <button>click me</button>
+    <script>
+     console.log("line 12");
+     setTimeout(()=>{
+         console.log("line 14");
+     },0)
+     console.log("line 17");
+
+
+     
+     fetch("https://jsonplaceholder.typicode.com/todos/1").then(function(response) {
+         if(response.status == 404){
+             alert("404 not found")
+         } else {
+            response.json().then( function (jsonData) {
+                  console.log(jsonData);
+            })
+         }
+    })
+
+     
+      console.log("31 before function");
+
+      async function fun(){
+          console.log("33 inside function");
+           const resp = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+           console.log(resp);
+           const jsData =await resp.json();
+           console.log(jsData);
+
+      }
+
+     fun();
+    console.log("40 after function");
+    
+
+    </script>
+</body>
+</html>
+
+<!-- break till 9:55 -->
