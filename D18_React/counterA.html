@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- react-dom -->
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<!-- transpiler jsx -> js -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+    *{
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 0.5rem;
+    }
+</style>
+</head>
+<body>
+      <h2>Counter App</h2>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      //select that node
+      const rootEle = document.querySelector("#root");
+
+
+     function Counter(props){
+          
+        const [value , setValue]  = React.useState(props.initialVal);
+        const handleIncrement =() => {
+           setValue(value+1);
+        }
+        const handledeccrement =() => {
+             setValue(value-1);
+        }
+        return <div>
+            <div>{value}</div>  
+            <button onClick={handleIncrement} >increment(+)</button>   
+            <button onClick={handledeccrement} >decrement(-)</button>   
+            </div>
+     }
+
+     function MultipleCounter(){
+        return <div>
+         <Counter initialVal={10}/>
+         <Counter initialVal={2}/>
+         <Counter initialVal={15}/>
+         </div>
+     }
+     
+      ReactDOM.render(<MultipleCounter /> ,rootEle);
+
+       
+    </script>
+</body>
+</html>
