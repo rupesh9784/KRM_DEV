@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- react-dom -->
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<!-- transpiler jsx -> js -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+      <h2>List in React</h2>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      //select that node
+      const rootEle = document.querySelector("#root");
+      
+    //   function inner(ele){
+    //       return <li>
+    //         <span>{ele}</span>
+    //         <button>click me</button>
+    //       </li>;
+    //   }
+
+
+      function Listitems(){
+        const arr = ["apple" , "mango" , "orange" , "watermelon"];
+
+       //idea 1
+    //    return <ul>
+    //       <li>{arr[0]}</li>
+    //       <li>{arr[1]}</li>
+    //       <li>{arr[2]}</li>
+    //       <li>{arr[3]}</li>
+    //     </ul>
+
+        //idea 2
+        return <ul>{arr.map((ele ,index) => {
+            return <li key={index} >
+            <span>{ele}</span>
+            <button>click me</button>
+          </li>;
+        } )}</ul>
+
+      }
+
+     
+      ReactDOM.render( <Listitems /> ,rootEle);
+ 
+    </script>
+</body>
+</html>

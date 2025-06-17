@@ -1,5 +1,5 @@
 # **Steps**
-* install nodejs :
+* install nodejs 
   * choose LTS 
   * do the install
 * check for the version of nodejs -> `node --version`
