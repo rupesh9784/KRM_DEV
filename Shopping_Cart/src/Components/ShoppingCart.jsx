@@ -41,7 +41,12 @@ function ShoppingCart() {
         setCartItems(cartItems.filter(item => item.id !== id));
    }
 
-
+  const calcTotal = () =>{
+       return cartItems.reduce(
+        (sum , item) => sum + (item.price * item.quantity), 
+        0
+       ).toFixed(2);
+  }
 
   return (
     <>
@@ -102,7 +107,9 @@ function ShoppingCart() {
         {/* footer */}
 
         <div className="cartfooter">
-          <div className="cart-total">Total:</div>
+          <div className="cart-total">
+            Total: {calcTotal()}
+          </div>
           <button className="checkout-btn">Checkout</button>
         </div>
       </div>

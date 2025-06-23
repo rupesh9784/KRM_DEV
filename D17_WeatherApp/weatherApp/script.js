@@ -18,12 +18,29 @@ searchBtn.addEventListener("click" ,async function(){
     searchInput.value = "";
 });
 
-const tempEle = document.querySelector(".temperature");
+const tempElem = document.querySelector(".temperature");
+const locationElem = document.querySelector(".location");
+const emojiImg = document.querySelector(".emoji");
+const timeElem = document.querySelector(".time");
+const dayElem = document.querySelector(".Day");
+const dateElem = document.querySelector(".Date");
+const conditionElem = document.querySelector(".condition");
+
 
 function showOnDisplay(data){
-      const ntemp = data.current.temp_c +"°";
-      tempEle.textContent = ntemp;
-     
+    const ntemp = data.current.temp_c +"°C";
+    const location = data.location.name;
+    const timeData = data.location.localtime;
+    const [date, time] = timeData.split(" ");
+    const iconLink = data.current.condition.icon;
+    const condition = data.current.condition.text;
+
+    tempElem.textContent = ntemp;
+    locationElem.textContent = location;
+    emojiImg.src = iconLink;
+    dateElem.innerText = date;
+    timeElem.innerText = time;
+    conditionElem.innerText = condition;
 }
 
 
@@ -35,6 +52,8 @@ async function fetchInformAbtWeather(location){
     if(resp.status == 200){
         const jsData =  await resp.json();
         return jsData;
+    } else {
+        alert("location is invalid");
     }
 
 }
