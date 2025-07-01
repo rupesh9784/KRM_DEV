@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-     <h1>WhatsApp Clone</h1>
+     {/* <h1>WhatsApp Clone</h1> */}
       <Routes>
         <Route path="/" element={<Home></Home>}  > </Route>
         <Route path="/login" element={<Login />}  > </Route>
@@ -23,4 +23,4 @@ function App() {
 
 export default App
 
-//break till 10:05
+
