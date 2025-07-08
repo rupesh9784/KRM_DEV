@@ -33,6 +33,7 @@ function Routing_App() {
           path="/login"
           element={<Login setisLoggedIn={setisLoggedIn} />}
         ></Route>
+         <Route path="*" element={<PageNotFound/>}></Route>
       </Routes>
     </>
   );

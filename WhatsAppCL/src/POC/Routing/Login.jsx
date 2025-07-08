@@ -5,6 +5,8 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../../firebase";
 
 function Login(props) {
+  //return if already true
+
   const setisLoggedIn = props.setisLoggedIn;
   const navig = useNavigate();
   console.log(navig);

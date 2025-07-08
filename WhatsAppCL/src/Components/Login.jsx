@@ -1,8 +1,45 @@
 import React from "react";
 import { Fingerprint ,LogIn} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
+import { auth ,db} from "../firebase";
+import {doc , setDoc}  from 'firebase/firestore'
 
 
-function Login() {
+async function createUser(userInfo){ 
+    const userObj = userInfo.user;
+    // const id = userObj.uid;
+    // const photoUrl = userObj.photoURL;
+    // const name = userObj.displayName;
+    // const email = userObj.email;
+ 
+    const {uid , photoURL , displayName , email} = userObj;
+    
+    await setDoc(doc(db , "users" ,uid), {
+      email : email,
+      name: displayName,
+      profile_pic : photoURL
+    })
+}
+
+
+function Login(props) {
+ 
+  const setisLoggedIn = props.setisLoggedIn;
+  const navig = useNavigate();
+  console.log(navig);
+
+  const handleLogin = async () => {
+    const userInfo = await signInWithPopup(auth, new GoogleAuthProvider());
+    console.log(userInfo);
+    createUser(userInfo);
+
+    setisLoggedIn(true);
+    alert("logged in");
+    navig("/");
+  };
+  
   return (
     <>
       <div className="h-[220px] bg-[#04a784]">
@@ -18,7 +55,9 @@ function Login() {
         <Fingerprint className="h-20 w-20 text-[#04a784]"  strokeWidth={1.5}></Fingerprint>
           <div>Sign In</div>
           <div>Sign in with your google account to get started</div>
-          <button className="bg-[#04a784] flex gap-2 p-4 rounded-xl">
+          <button
+          onClick={handleLogin}
+          className="bg-[#04a784] flex gap-2 p-4 rounded-xl">
             <div> Sign in with google</div>
             <LogIn></LogIn>
             </button>
