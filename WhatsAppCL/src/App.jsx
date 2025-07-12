@@ -7,7 +7,7 @@ import { useState } from "react"
 import ProtectedRoute from "./Components/ProtectedRoute"
 
 function App() {
-  const [isLoggedIn, setisLoggedIn] = useState(true);
+  
 
   return (
     <>
@@ -16,23 +16,23 @@ function App() {
         <Route
           path="/"
           element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <Home setisLoggedIn={setisLoggedIn}></Home>
+            <ProtectedRoute >
+              <Home ></Home>
             </ProtectedRoute>
           }
         >
           <Route
             path="/chat/:uniqueId"
             element={
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <Chat setisLoggedIn={setisLoggedIn}></Chat>
+              <ProtectedRoute >
+                <Chat ></Chat>
               </ProtectedRoute>
             }
           ></Route>
         </Route>
         <Route
           path="/login"
-          element={<Login setisLoggedIn={setisLoggedIn} />}
+          element={<Login/>}
         ></Route>
          <Route path="*" element={<PageNotFound/>}></Route>
       </Routes>

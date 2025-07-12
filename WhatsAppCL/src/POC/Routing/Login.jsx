@@ -7,14 +7,14 @@ import { auth } from "../../firebase";
 function Login(props) {
   //return if already true
 
-  const setisLoggedIn = props.setisLoggedIn;
+  
   const navig = useNavigate();
   console.log(navig);
 
   const handleLogin = async () => {
     const result = await signInWithPopup(auth, new GoogleAuthProvider());
     console.log(result);
-    setisLoggedIn(true);
+    
     alert("logged in");
     navig("/");
   };

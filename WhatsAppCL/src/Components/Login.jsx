@@ -5,6 +5,7 @@ import { signInWithPopup } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { auth ,db} from "../firebase";
 import {doc , setDoc}  from 'firebase/firestore'
+import { useAuth } from "./AuthContext";
 
 
 async function createUser(userInfo){ 
@@ -24,19 +25,32 @@ async function createUser(userInfo){
 }
 
 
-function Login(props) {
- 
-  const setisLoggedIn = props.setisLoggedIn;
+function Login() {
+   const {userData,setUserData} = useAuth();
+  
+  
   const navig = useNavigate();
+
+  if(userData != null){
+       navig("/");
+       return <></>
+   }
+
   console.log(navig);
 
   const handleLogin = async () => {
     const userInfo = await signInWithPopup(auth, new GoogleAuthProvider());
-    console.log(userInfo);
-    createUser(userInfo);
-
-    setisLoggedIn(true);
-    alert("logged in");
+    
+    await createUser(userInfo);
+    const userObj = userInfo.user;
+     const {uid , photoURL , displayName , email} = userObj;
+     setUserData({
+       id: uid,
+       profile_pic: photoURL,
+       email: email,
+       name: displayName
+     })
+ 
     navig("/");
   };
   

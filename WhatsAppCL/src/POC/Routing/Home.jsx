@@ -4,12 +4,12 @@ import { auth } from '../../firebase';
 
 function Home(props) {
 
-  const setisLoggedIn = props.setisLoggedIn;
+  
 
  const handleLogout =async () => {
 
    await signOut(auth);
-    setisLoggedIn(false);
+    
      alert("log out");
  }
  

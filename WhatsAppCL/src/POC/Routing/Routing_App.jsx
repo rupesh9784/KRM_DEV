@@ -6,7 +6,7 @@ import Chat from "./Chat";
 import ProtectedRoute from "./ProtectedRoute";
 
 function Routing_App() {
-  const [isLoggedIn, setisLoggedIn] = useState(true);
+   
 
   return (
     <>
@@ -16,7 +16,7 @@ function Routing_App() {
           path="/"
           element={
             <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <Home setisLoggedIn={setisLoggedIn}></Home>
+              <Home  ></Home>
             </ProtectedRoute>
           }
         >
@@ -24,14 +24,14 @@ function Routing_App() {
             path="/chat/:uniqueId"
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <Chat setisLoggedIn={setisLoggedIn}></Chat>
+                <Chat  ></Chat>
               </ProtectedRoute>
             }
           ></Route>
         </Route>
         <Route
           path="/login"
-          element={<Login setisLoggedIn={setisLoggedIn} />}
+          element={<Login  />}
         ></Route>
          <Route path="*" element={<PageNotFound/>}></Route>
       </Routes>
