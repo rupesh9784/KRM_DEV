@@ -7,9 +7,9 @@ function Profile(props) {
    console.log("check user" , userData)
 
   return (
-    <div>
+    <div >
         {/* //profile top bar */}
-        <div className="bg-[#04a784] h-full text-white p-4 text-lg flex items-center gap-6">
+        <div className="bg-[#04a784] w-[30vw] text-white p-4 text-lg flex items-center gap-6">
           <button onClick={props.goHome}>
             <ArrowLeft />
           </button>

@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Profile from "./Profile";
+import UserCard from "./UserCard";
 
 function ChatPanel() {
   const [users, setUsers] = useState([]);
@@ -26,7 +27,6 @@ function ChatPanel() {
         };
       });
 
-      console.log("list of users in db", UserArr);
       setUsers(UserArr);
       setIsLoading(false);
     };
@@ -48,7 +48,7 @@ function ChatPanel() {
 
   //chat panel
   return (
-    <div>
+    <div className="w-[30vw] bg-white" >
       {/* leftside top bar */}
       <div className="flex bg-gray-400 p-4 gap-2 justify-between items-center">
         <button onClick={goBack}>
@@ -70,20 +70,7 @@ function ChatPanel() {
       ) : (
         <div>
           {users.map((userObj) => {
-            const { name, profile_pic } = userObj.userData;
-            return (
-              <div
-                key={userObj.id}
-                className="flex gap-4 items-center p-3 m-auto border-b-1 "
-              >
-                <img
-                  className="rounded-full h-10 w-10 "
-                  src={profile_pic || "default_profile_pic.webp"}
-                  alt=""
-                />
-                <h2>{name || "No name Provide"}</h2>
-              </div>
-            );
+            return <UserCard key={userObj.id} userObj={userObj} />
           })}
         </div>
       )}

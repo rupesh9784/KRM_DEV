@@ -22,10 +22,10 @@ function App() {
           }
         >
           <Route
-            path="/chat/:uniqueId"
+            path="/chat/:chatId"
             element={
               <ProtectedRoute >
-                <Chat ></Chat>
+                 <Home></Home>
               </ProtectedRoute>
             }
           ></Route>

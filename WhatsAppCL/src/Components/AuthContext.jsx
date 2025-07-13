@@ -13,30 +13,36 @@ function AuthWrapper({children}) {
 
   //
   const [userData, setUserData] = useState(null);
+  const [loading , setLoading] = useState(true);
+  
   
    useEffect(() => {
 
     //login or not
     onAuthStateChanged(auth, async (currentUser) => {
+      setLoading(true);
       if (currentUser) {
-        const docRef = doc(db, "users", currentUser?.uid);
+        const docRef = doc(db, "users", currentUser.uid);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          const { uid, photoURL, displayName, email } = docSnap.data();
+           console.log("onauth dat " , docSnap.data());
+          const { profile_pic, name, email } = docSnap.data();
           setUserData({
-            id: uid,
-            profile_pic: photoURL,
+            id: currentUser.uid,
+            profile_pic: profile_pic,
             email: email,
-            name: displayName,
+            name: name,
           });
         }
-      }
+       }
+      setLoading(false);
+
     });
   },[]);
 
 
   return (
-     <AuthContext.Provider value={{userData , setUserData}} >
+     <AuthContext.Provider value={{userData , setUserData ,loading}} >
        {children}
      </AuthContext.Provider>
   )

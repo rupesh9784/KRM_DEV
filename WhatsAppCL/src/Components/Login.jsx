@@ -25,32 +25,15 @@ async function createUser(userInfo){
 }
 
 
-function Login() {
-   const {userData,setUserData} = useAuth();
-  
+function Login() {  
   
   const navig = useNavigate();
-
-  if(userData != null){
-       navig("/");
-       return <></>
-   }
 
   console.log(navig);
 
   const handleLogin = async () => {
     const userInfo = await signInWithPopup(auth, new GoogleAuthProvider());
-    
     await createUser(userInfo);
-    const userObj = userInfo.user;
-     const {uid , photoURL , displayName , email} = userObj;
-     setUserData({
-       id: uid,
-       profile_pic: photoURL,
-       email: email,
-       name: displayName
-     })
- 
     navig("/");
   };
   
