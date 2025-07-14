@@ -10,17 +10,22 @@ import { useAuth } from "./AuthContext";
 
 async function createUser(userInfo){ 
     const userObj = userInfo.user;
-    // const id = userObj.uid;
-    // const photoUrl = userObj.photoURL;
-    // const name = userObj.displayName;
-    // const email = userObj.email;
- 
+
+    
+   const date = new Date();
+    const timeStamp = date.toLocaleString("en-US" , {
+      hour:"numeric",
+      minute:"numeric",
+      hour12:true,
+    })
+
     const {uid , photoURL , displayName , email} = userObj;
     
     await setDoc(doc(db , "users" ,uid), {
       email : email,
       name: displayName,
-      profile_pic : photoURL
+      profile_pic : photoURL,
+      lastSeen: timeStamp
     })
 }
 

@@ -32,7 +32,7 @@ function Chat() {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log("second user data", docSnap.data());
+        // console.log("second user data", docSnap.data());
         setSecondUser(docSnap.data());
       }
     };
@@ -73,7 +73,7 @@ function Chat() {
     
 
     if (msgList?.length === 0) {
-      //mistake 1 chas -> chats
+     
       await setDoc(doc(db, "user-chats", chatId), {
         chatId: chatId,
         messages: [
@@ -101,7 +101,7 @@ function Chat() {
   }
   };
 
-  //break 10:10
+ 
   return (
     <section className="w-[70%] h-full flex flex-col gap-4 items-center justify-center">
       <div className="h-full w-full flex flex-col bg-amber-50">
@@ -112,7 +112,18 @@ function Chat() {
             src={"/default_profile_pic.webp"}
             alt=""
           />
-          <h3>{secondUser?.name}</h3>
+          <div>
+           <h3>{secondUser?.name}</h3>
+           {secondUser?.lastSeen && (
+              <p className="text-xs text-neutral-400" >
+                lastseen at {secondUser?.lastSeen}
+              </p>
+           )
+           }
+
+          </div>
+
+
         </div>
 
         {/* message list */}

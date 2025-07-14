@@ -2,6 +2,7 @@ import {
     // ArrowLeft,
   CircleFadingPlusIcon,
   MessageSquare,
+  SearchIcon,
   UserRoundIcon,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
@@ -9,12 +10,14 @@ import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Profile from "./Profile";
 import UserCard from "./UserCard";
+import { useAuth } from "./AuthContext";
 
 function ChatPanel() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const {userData} = useAuth();
   const [showProfile, setShowProfile] = useState(false);
+  const [searchQuery , setSearchQuery] = useState();
 
   useEffect(() => {
     const getUser = async () => {
@@ -38,6 +41,14 @@ function ChatPanel() {
   const goBack = () => setShowProfile(true);
   const goHome = () => setShowProfile(false);
 
+  let filteredUsers = users;
+  if(searchQuery){
+    filteredUsers = users.filter((user)=>
+      user.userData.name?.toLowerCase()?.includes(searchQuery?.toLowerCase())
+    );
+  }
+
+
 //break till 9;12
   //profile
   if (showProfile == true) {
@@ -54,8 +65,8 @@ function ChatPanel() {
         <button onClick={goBack}>
           <img
             className="w-10 h-10 rounded-full object-cover"
-            src={"/default_profile_pic.webp"}
-            alt=""
+            src={userData?.profile_pic ||  "/default_profile_pic.webp"}
+            alt="user profile pic"
           />
         </button>
         <div className="flex gap-6 items-end">
@@ -68,10 +79,23 @@ function ChatPanel() {
       {isLoading ? (
         <div>...loading</div>
       ) : (
+        //search list
+        <div className="bg-white py-2 px-3">
+          <div className="bg-background flex items-center gap-4 px-3 py-2 rounded-lg border-1">
+            <SearchIcon className="w-4 h-4" />
+            <input
+              className="bg-background focus-within:outline-none"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+
         <div>
-          {users.map((userObj) => {
+          {filteredUsers.map((userObj) => {
             return <UserCard key={userObj.id} userObj={userObj} />
           })}
+        </div>
         </div>
       )}
     </div>
